@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
+
+body {
+    /* Ensure the body takes the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    margin: 0;
+}
+  
+.chat-wrapper {
+    width: 100%;
+    max-width: 928px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    // height: 110vh;
+    position: relative;
+}
+
+.chat-container {
+    /* Chat container styles */
+    width: 100%;
+    max-width: 928px;
+    background: var(--color-light-pearl-gray, #F7F7F7);
+    box-sizing: border-box;
+    position: fixed; /* or relative based on requirements */
+    bottom: 0;
+    z-index: 9998;
+    // display: flex;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    background: var(--color-light-pearl-gray, #F7F7F7);
+    font-family: "Manrope", sans-serif;
+    .input-box {
+      /* Input box styles */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: auto;
+      font-family: 'Manrope', sans-serif;
+      bottom: 0px;
+      bottom: 0;
+      padding: 10px;
+
+      .ready-made-questions {
+        /* Ready-made questions styles */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        .row {
+          display: flex;
+          gap: 10px;
+          width: 100%;
+        }
+
+        .question-box {
+          /* Question box styles */
+          width: 100%;
+          max-width: calc(50% - 5px);
+          border: 1px solid #A3A3A3;
+          border-radius: 8px;
+          background-color: #F2F2F2;
+          padding: 24px 16px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .question-content {
+            align-items: flex-start;
+
+            .title {
+            margin-bottom: 7px;
+            color: var(--color-dark-700, #4D4D4D);
+            /* overline */
+            font-family: 'Manrope', sans-serif;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 32px; /* 145.455% */
+            /* Additional title styles */
+            }
+
+            .subtitle {
+            color: var(--color-dark-700, #4D4D4D);
+            /* body */
+            font-family: 'Manrope', sans-serif;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px; /* 133.333% */
+              /* Additional subtitle styles */
+            }
+          }
+        }
+      }
+
+      .text-input {
+        /* Text input styles */
+        width: 100%;
+        max-width: 928px;
+        padding: 10px;
+        // min-width: 50vh
+        /* Other text input styles */
+      }
+    }
+}
+
+.chat-gpt-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative; /* or absolute based on requirements */
+  top: 20px;
+  margin-bottom: 20%;
+  max-width: 928px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+.chat-gpt-circle {
+  /* Your circular icon styles */
+  width: 100px;
+  height: 100px;
+  background-color: #3e64ff; /* Example background color */
+  border-radius: 50%;
+} 
+
+.chat-gpt-text {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.chat-gpt-title {
+  color: var(--color-black-deep-black, #0A0A0A);
+  /* h1 */
+  font-family: 'Manrope', sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 20px;
+}
+.chat-gpt-subtitle {
+  color: var(--color-black-graphite-gray, #4D4D4D);
+  text-align: center;
+  /* body */
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+  margin: 20px;
+  /* Additional subtitle styles */
+}
+  
+/* Mobile styles */
+@media screen and (max-width: 750px), (max-height: 500px) {
+    /* Adjust positioning for chat-gpt-container on mobile */
+    .chat-gpt-container {
+        margin-bottom: 20%;
+        position: relative;
+    }
+    .chat-container {
+        position: relative;
+        // width: 100%; /* Adjust width for margins on the sides */
+
+        .input-box {
+            position: relative;
+          
+        }
+    }
+}

@@ -1,0 +1,53 @@
+<div class="chat-wrapper">
+
+    <div class="chat-gpt-container" *ngIf="showChatGPT">
+      <div class="chat-gpt-circle">
+        <!-- Your circular icon content goes here -->
+      </div>
+      <div class="chat-gpt-text">
+        <div class="chat-gpt-title">Change Negotiations GPT</div>
+        <div class="chat-gpt-subtitle">Custom GPT tool designed to give you more information about the Change Negotiations journey in Finland crafted by people with firsthand experience. We’re in this together.</div>
+      </div>
+    </div>
+
+      <div class="messages" *ngIf="!showChatGPT" >
+        TEST
+      <!-- Display chat messages here -->
+    </div>
+<div class="chat-container">
+ 
+    <div class="input-box">
+      <div class="ready-made-questions">
+        <div class="row">
+          <div class="question-box" (click)="sendQuestion('What are my rights during the layoff period?')">
+            <div class="question-content">
+              <div class="title">What are my rights</div>
+              <div class="subtitle">during the layoff period?</div>
+            </div>
+          </div>
+          <div class="question-box">
+            <div class="question-content">
+              <div class="title">If I find a new job</div>
+              <div class="subtitle">do I need to let my current employer know?</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="question-box">
+            <div class="question-content">
+              <div class="title">Can my employer fire me</div>
+              <div class="subtitle">during the layoff period?</div>
+            </div>
+          </div>
+          <div class="question-box">
+            <div class="question-content">
+              <div class="title">Explain Change Negotiations</div>
+              <div class="subtitle">as if I’m a 5-year old</div>
+            </div>
+          </div>
+        </div>
+        <input type="text" placeholder="Message Change Negotiations GPT" class="text-input">
+      </div>
+    </div>
+  </div>
+  
