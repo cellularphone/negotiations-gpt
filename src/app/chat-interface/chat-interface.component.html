@@ -11,21 +11,23 @@
     </div>
 
       <div class="messages" *ngIf="!showChatGPT" >
-        TEST
+        {{this.userInput}}
       <!-- Display chat messages here -->
     </div>
-<div class="chat-container">
- 
+    <!-- <div class="chat-container" [ngStyle]="{ 'position': showChatGPT ? 'relative' : 'fixed' }"> -->
+    <div class="chat-container" [class.fixed-chat]="!showChatGPT">
+
+      <!-- Chat content -->     
     <div class="input-box">
       <div class="ready-made-questions">
         <div class="row">
-          <div class="question-box" (click)="sendQuestion('What are my rights during the layoff period?')">
+          <div class="question-box" *ngIf="showChatGPT" (click)="sendQuestion('What are my rights during the layoff period?')">
             <div class="question-content">
               <div class="title">What are my rights</div>
               <div class="subtitle">during the layoff period?</div>
             </div>
           </div>
-          <div class="question-box">
+          <div class="question-box" *ngIf="showChatGPT" (click)="sendQuestion('If I find a new job do I need to let my current employer know?')">
             <div class="question-content">
               <div class="title">If I find a new job</div>
               <div class="subtitle">do I need to let my current employer know?</div>
@@ -33,13 +35,13 @@
           </div>
         </div>
         <div class="row">
-          <div class="question-box">
+          <div class="question-box" *ngIf="showChatGPT" (click)="sendQuestion('Can my employer fire me during layoff period?')">
             <div class="question-content">
               <div class="title">Can my employer fire me</div>
               <div class="subtitle">during the layoff period?</div>
             </div>
           </div>
-          <div class="question-box">
+          <div class="question-box" *ngIf="showChatGPT"  (click)="sendQuestion('Explain change negotiations as if  I’m a five year-old')">
             <div class="question-content">
               <div class="title">Explain Change Negotiations</div>
               <div class="subtitle">as if I’m a 5-year old</div>

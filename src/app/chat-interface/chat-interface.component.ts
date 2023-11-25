@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ChatInterfaceComponent {
   showChatGPT: boolean = true; // Initially show the ChatGPT-like section
-
+  userInput: string | undefined;
  
   
   constructor(private http: HttpClient) {}
@@ -19,8 +19,9 @@ export class ChatInterfaceComponent {
   }
   sendUserInput(userInput: string) {
     // Call the GPT API with user input¨
-    console.log("SEND TEST");
+    console.log(userInput);
     this.showChatGPT = false;
+    this.userInput = userInput;
     // this.http.post('YOUR_GPT_API_ENDPOINT', { message: userInput }).subscribe((response: any) => {
     //   console.log(response); // Handle the response from the GPT API
     //   // Display the response in the chat interface messages section
@@ -29,8 +30,6 @@ export class ChatInterfaceComponent {
 
   sendQuestion(input: string) {
     const question = input;
-    console.log(question);
-    
     this.sendUserInput(question); // Call the method to send the question to the API
   }
 
