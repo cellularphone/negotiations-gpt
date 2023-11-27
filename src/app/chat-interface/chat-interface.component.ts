@@ -8,8 +8,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ChatInterfaceComponent {
   showChatGPT: boolean = true; // Initially show the ChatGPT-like section
-  userInput: string | undefined;
- 
+  userInput: string = ''; // Initialize or define userInput in your component
+  messages: string[] = []; // Array to store user messages
+  
   
   constructor(private http: HttpClient) {}
  // Function to toggle to chat interface when the conversation starts
@@ -26,11 +27,22 @@ export class ChatInterfaceComponent {
     //   console.log(response); // Handle the response from the GPT API
     //   // Display the response in the chat interface messages section
     // });
+    this.sendUserMessage()
   }
-
+  sendUserMessage() {
+    if (this.userInput.trim() !== '') {
+      this.messages.push(this.userInput); // Add user message to the array
+      // Optionally, you can perform any sending logic here if needed
+      this.userInput = ''; // Clear userInput after sending the message
+    }
+  }
   sendQuestion(input: string) {
     const question = input;
     this.sendUserInput(question); // Call the method to send the question to the API
   }
-
+  sendMessage() {
+    // Handle sending the user input
+    console.log("User input: " + this.userInput);
+    // You can perform actions like sending the user input to the chat system, etc.
+  }
 }

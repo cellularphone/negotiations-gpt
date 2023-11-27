@@ -1,23 +1,29 @@
 <div class="chat-wrapper">
 
-    <div class="chat-gpt-container" *ngIf="showChatGPT">
-      <div class="chat-gpt-circle">
-        <!-- Your circular icon content goes here -->
-      </div>
-      <div class="chat-gpt-text">
-        <div class="chat-gpt-title">Change Negotiations GPT</div>
-        <div class="chat-gpt-subtitle">Custom GPT tool designed to give you more information about the Change Negotiations journey in Finland crafted by people with firsthand experience. We’re in this together.</div>
+  <div class="chat-gpt-container" *ngIf="showChatGPT">
+    <div class="chat-gpt-circle">
+      <!-- Your circular icon content goes here -->
+    </div>
+    <div class="chat-gpt-text">
+      <div class="chat-gpt-title">Change Negotiations GPT</div>
+      <div class="chat-gpt-subtitle">Custom GPT tool designed to give you more information about the Change Negotiations journey in Finland crafted by people with firsthand experience. We’re in this together.</div>
+    </div>
+  </div>
+  <!-- <div class="messages" *ngIf="!showChatGPT" >
+    {{this.userInput}}
+  </div> -->
+  <div class="messages">
+    <div class="message" *ngFor="let message of messages">
+      {{ message }}
+      <div class="answer">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum tristique metus ac sollicitudin. Nulla facilisi. Fusce tristique sapien a vestibulum finibus. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis non lorem at justo congue convallis. Ut lobortis bibendum consequat. Sed ac massa ac sapien varius tincidunt."
       </div>
     </div>
+   
+  </div>
+  <div class="chat-container" [class.fixed-chat]="!showChatGPT">
 
-      <div class="messages" *ngIf="!showChatGPT" >
-        {{this.userInput}}
-      <!-- Display chat messages here -->
-    </div>
-    <!-- <div class="chat-container" [ngStyle]="{ 'position': showChatGPT ? 'relative' : 'fixed' }"> -->
-    <div class="chat-container" [class.fixed-chat]="!showChatGPT">
-
-      <!-- Chat content -->     
+    <!-- Chat content -->
     <div class="input-box">
       <div class="ready-made-questions">
         <div class="row">
@@ -41,15 +47,18 @@
               <div class="subtitle">during the layoff period?</div>
             </div>
           </div>
-          <div class="question-box" *ngIf="showChatGPT"  (click)="sendQuestion('Explain change negotiations as if  I’m a five year-old')">
+          <div class="question-box" *ngIf="showChatGPT" (click)="sendQuestion('Explain change negotiations as if  I’m a five year-old')">
             <div class="question-content">
               <div class="title">Explain Change Negotiations</div>
               <div class="subtitle">as if I’m a 5-year old</div>
             </div>
           </div>
         </div>
-        <input type="text" placeholder="Message Change Negotiations GPT" class="text-input">
-      </div>
+        
+          <input type="text" class="text-input" placeholder="Message Change Negotiations GPT" [(ngModel)]="userInput" (keyup.enter)="sendUserMessage()">
+
     </div>
+
   </div>
-  
+
+</div>

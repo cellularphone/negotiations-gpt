@@ -107,7 +107,13 @@ body {
       }
     }
 }
-
+.messages {
+  position: relative;
+  margin-bottom: 100px;
+}
+.answer {
+  text-align: right;
+}
 .chat-gpt-container {
   display: flex;
   align-items: center;
@@ -181,3 +187,4 @@ body {
       }
     }
 }
+
