@@ -49,3 +49,9 @@
     color: #333; /* Adjust link color */
     /* Additional styles for the links */
 }
+.right-content ul li a:active,
+.right-content ul li a:focus,
+.left-content a:active,
+.left-content a:focus {
+    font-weight: bold; /* Apply bold font weight */
+}
