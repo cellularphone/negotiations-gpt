@@ -7,12 +7,16 @@ import { ChatInterfaceComponent } from './chat-interface/chat-interface.componen
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatInterfaceComponent,
-    HeaderComponent
+    HeaderComponent,
+    AboutPageComponent,
+    ContactPageComponent
   ],
   imports: [
     BrowserModule,
