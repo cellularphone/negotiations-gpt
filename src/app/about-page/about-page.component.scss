@@ -106,16 +106,26 @@ h1 {
         padding: 3px
     }
     .sm-group {
-        max-width: 115px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 @media (max-width:321px) {
     .image {
         height: 100px;
         width: 100px;
     }
-
+    .small-image {
+        height: 30px;
+        padding: 3px
+    }
     .picture-boxes {
         padding: 10px;
+    }
+    .sm-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
 }

@@ -21,6 +21,7 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
+.angular/cache/15.2.10/angular-webpack/
 
 # Visual Studio Code
 .vscode/*

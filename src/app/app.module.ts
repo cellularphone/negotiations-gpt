@@ -16,13 +16,14 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
     ChatInterfaceComponent,
     HeaderComponent,
     AboutPageComponent,
-    ContactPageComponent
+    ContactPageComponent, 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
