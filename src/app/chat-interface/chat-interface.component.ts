@@ -27,10 +27,11 @@ export class ChatInterfaceComponent {
     if (this.userInput.trim() !== '') {
       this.showChatGPT = false;
       this.messages.push({ text: this.userInput, isUser: true }); // Store user message
-      
-      this.chatGptService.sendUserInput(this.userInput, 200, 0.7).subscribe((response: any) => {
+      console.log(this.userInput);
+      this.chatGptService.sendUserInput(this.userInput, 240).subscribe((response: any) => {
         this.output = response.choices[0].text;
         this.messages.push({ text: this.output, isUser: false }); // Store GPT response
+        
       });
 
       this.userInput = ''; // Clear userInput after sending the message
